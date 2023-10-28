@@ -29,7 +29,6 @@ class DevicesScreen extends StatelessWidget {
       ),
       bottomNavigationBar: const BottonNavigation(),
       appBar: TopNavigation(
-        size: size,
         prevPageButton: true,
         navItems: [
           RedirectButton(

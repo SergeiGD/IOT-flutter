@@ -7,13 +7,11 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.prevPageButton,
     required this.navItems,
-    required this.size,
     this.endButton,
   });
 
   final bool prevPageButton;
   final List<RedirectButton> navItems;
-  final Size size;
   final IconButton? endButton;
 
   @override
@@ -25,7 +23,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: size.width * 0.1,
+            width: 30,
             child: prevPageButton
                 ? IconButton(
                     icon: const Icon(Icons.arrow_back),
@@ -35,7 +33,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
           ),
           for (final button in navItems) button,
           SizedBox(
-            width: size.width * 0.1,
+            width: 30,
             child: endButton,
           ),
         ],
