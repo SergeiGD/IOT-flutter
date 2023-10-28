@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Michroma",
       ),
       home: const DevicesScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
