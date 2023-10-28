@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iot/DevicesScreen/devices_screen.dart';
+import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "Michroma",
       ),
-      home: const DevicesScreen(),
+      home: const ListDevicesScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
