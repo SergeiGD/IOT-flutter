@@ -60,7 +60,7 @@ class _ItemButtonState extends State<ItemButton> {
           widget.title,
           textAlign: TextAlign.center,
           style: const TextStyle(
-            color: cDartGreyColor,
+            color: cWhiteColor,
             fontWeight: FontWeight.w600,
           ),
         )

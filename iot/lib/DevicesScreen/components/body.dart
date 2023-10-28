@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/DevicesScreen/components/item_button.dart';
 
 class DevicesScreenBody extends StatefulWidget {
@@ -20,41 +19,6 @@ class _DevicesScreenBodyState extends State<DevicesScreenBody> {
           children: [
             SizedBox(
               height: size.height * 0.02,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Icon(
-                  Icons.menu,
-                  size: 30,
-                  color: cDartGreyColor,
-                ),
-                const Text(
-                  "Home",
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-                Container(
-                  height: size.height * 0.045,
-                  width: size.width * 0.095,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade50,
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 8,
-                            offset: Offset(3, 3)),
-                      ]),
-                  child: const Icon(
-                    Icons.notifications_none,
-                    color: cDartGreyColor,
-                  ),
-                ),
-              ],
             ),
             SizedBox(height: size.height * 0.03),
             ItemButton(
