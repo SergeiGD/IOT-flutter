@@ -41,6 +41,10 @@ class DevicesScreen extends StatelessWidget {
             event: () => print("pressed2"),
           ),
         ],
+        endButton: IconButton(
+          icon: const Icon(Icons.qr_code),
+          onPressed: () => print("pressed3"),
+        ),
       ),
     );
   }
