@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:iot/AddDevicesScreen/add_devices_screen.dart';
 import 'package:iot/constants.dart';
-import 'package:iot/DevicesScreen/components/body.dart';
+import 'package:iot/ListDevicesScreen/components/body.dart';
 import 'package:iot/General/components/bottom_navigation.dart';
 import 'package:iot/General/components/top_navigation.dart';
 import 'package:iot/General/components/redirect_button.dart';
 
-class DevicesScreen extends StatelessWidget {
-  const DevicesScreen({super.key});
+class ListDevicesScreen extends StatelessWidget {
+  const ListDevicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,24 +26,23 @@ class DevicesScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: const DevicesScreenBody(),
+        child: const ListDevicesScreenBody(),
       ),
       bottomNavigationBar: const BottonNavigation(),
       appBar: TopNavigation(
-        prevPageButton: true,
+        prevPageButton: false,
         navItems: [
           RedirectButton(
-            text: "Добавить вручную",
-            event: () => print("pressed1"),
-          ),
-          RedirectButton(
-            text: "Сканирование",
-            event: () => print("pressed2"),
+            text: "Устройства",
+            event: () => (),
           ),
         ],
-        endButton: IconButton(
-          icon: const Icon(Icons.qr_code),
-          onPressed: () => print("pressed3"),
+        navIcon: NavIcon(
+          icon: const Icon(Icons.add),
+          event: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddDevicesScreen()),
+          ),
         ),
       ),
     );

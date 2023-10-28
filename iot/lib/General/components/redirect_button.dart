@@ -14,7 +14,13 @@ class RedirectButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: event,
-      child: Text(text),
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 17,
+        ),
+      ),
     );
   }
 }
