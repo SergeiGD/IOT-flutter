@@ -28,7 +28,9 @@ class ListDevicesScreen extends StatelessWidget {
         ),
         child: const ListDevicesScreenBody(),
       ),
-      bottomNavigationBar: const BottonNavigation(),
+      bottomNavigationBar: const BottonNavigation(
+        currentPage: Pages.devices,
+      ),
       appBar: TopNavigation(
         prevPageButton: false,
         navItems: [

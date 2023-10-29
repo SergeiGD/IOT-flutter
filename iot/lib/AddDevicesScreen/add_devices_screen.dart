@@ -27,13 +27,16 @@ class AddDevicesScreen extends StatelessWidget {
         ),
         child: const AddDevicesScreenBody(),
       ),
-      bottomNavigationBar: const BottonNavigation(),
+      bottomNavigationBar: const BottonNavigation(
+        currentPage: Pages.devices,
+      ),
       appBar: TopNavigation(
         prevPageButton: true,
         navItems: [
           RedirectButton(
             text: "Добавить вручную",
             event: () => (),
+            active: true,
           ),
           RedirectButton(
             text: "Сканирование",
