@@ -23,18 +23,27 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
               children: [
                 ItemButton(
                   size: size,
-                  icon: Icons.camera,
-                  title: "Камера",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
                 ItemButton(
                   size: size,
-                  icon: Icons.light,
-                  title: "Свет",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
                 ItemButton(
                   size: size,
-                  icon: Icons.alarm,
-                  title: "Сигнализация",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
               ],
             ),
@@ -44,18 +53,27 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
               children: [
                 ItemButton(
                   size: size,
-                  icon: Icons.camera,
-                  title: "Камера",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
                 ItemButton(
                   size: size,
-                  icon: Icons.light,
-                  title: "Свет",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
                 ItemButton(
                   size: size,
-                  icon: Icons.alarm,
-                  title: "Сигнализация",
+                  image: Image.asset(
+                    "images/fan.png",
+                    fit: BoxFit.cover,
+                  ),
+                  title: "Вентилятор",
                 ),
               ],
             ),
