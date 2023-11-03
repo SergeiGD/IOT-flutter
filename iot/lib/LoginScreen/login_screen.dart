@@ -135,8 +135,10 @@ class _LoginFormState extends State<LoginForm> {
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 12)),
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ListDevicesScreen()));
                 },
                 child: const Text(
                   "Далее",
