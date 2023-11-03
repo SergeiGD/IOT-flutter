@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
-import 'package:iot/LoginScreen/login_screen.dart';
+import 'package:iot/ProfileScreen/profile_screen.dart';
 import 'package:iot/constants.dart';
 
 enum Pages {
@@ -28,16 +28,16 @@ class BottonNavigation extends StatelessWidget {
   }
 
   StatelessWidget _getRedirectPage(int page) {
-    // в будущем 0 и 2 заменяться на сценарии и профиль
+    // в будущем 0 замениться на сценарии
     switch (page) {
       case 0:
         return const ListDevicesScreen();
       case 1:
         return const ListDevicesScreen();
       case 2:
-        return const LoginScreen();
+        return const ProfileScreen();
       default:
-        return const LoginScreen();
+        return const ProfileScreen();
     }
   }
 
