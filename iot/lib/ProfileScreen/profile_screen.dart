@@ -105,7 +105,7 @@ class ButtonProfile extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 13),
-          backgroundColor: const Color.fromARGB(255, 73, 45, 114),
+          backgroundColor: const Color.fromRGBO(57, 35, 89, 1),
         ),
         onPressed: onTap,
         child: Row(
