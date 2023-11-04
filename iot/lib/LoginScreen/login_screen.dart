@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/main_scuffold.dart';
 import 'package:iot/constants.dart';
-import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

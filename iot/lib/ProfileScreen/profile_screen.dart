@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/nav_top.dart';
 import 'package:iot/constants.dart';
-import 'package:iot/General/components/bottom_navigation.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Column(
       children: [
-        NavTop(title: "Профиль", height: 63, showLeading: false),
+        const NavTop(title: "Профиль", height: 63, showLeading: false),
         Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           const ItemProfile(),
           const SizedBox(height: 10),
