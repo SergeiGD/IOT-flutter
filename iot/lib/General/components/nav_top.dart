@@ -17,9 +17,10 @@ class NavTop extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(title),
       toolbarHeight: height,
-      backgroundColor: cMainBackgroundColor,
+      backgroundColor: Colors.transparent,
       centerTitle: true,
       elevation: 1,
+      shadowColor: Colors.transparent,
       automaticallyImplyLeading: showLeading,
       titleTextStyle: const TextStyle(fontSize: 18),
       shape: const Border(
