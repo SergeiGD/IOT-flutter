@@ -1,7 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:iot/constants.dart';
 import 'package:iot/General/components/bottom_navigation.dart';
-import 'package:iot/General/components/top_navigation.dart';
+
+class NavTop extends StatelessWidget implements PreferredSizeWidget {
+  const NavTop(
+      {super.key,
+      this.height = 46,
+      required this.title,
+      this.showLeading = true});
+
+  final double height;
+  final String title;
+  final bool showLeading;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(title),
+      toolbarHeight: height,
+      backgroundColor: cMainBackgroundColor,
+      centerTitle: true,
+      elevation: 1,
+      automaticallyImplyLeading: showLeading,
+      titleTextStyle: const TextStyle(fontSize: 18),
+      shape: const Border(
+          bottom:
+              BorderSide(color: Color.fromRGBO(255, 255, 255, 0.5), width: 1)),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
+}
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -10,17 +40,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Профиль"),
-          backgroundColor: cMainBackgroundColor,
-          centerTitle: true,
-          elevation: 1,
-          automaticallyImplyLeading: false,
-          titleTextStyle: const TextStyle(fontSize: 18),
-          shape: const Border(
-              bottom: BorderSide(
-                  color: Color.fromRGBO(255, 255, 255, 0.5), width: 1)),
-        ),
+        appBar: const NavTop(title: "Профиль", height: 63, showLeading: false),
         bottomNavigationBar: const BottonNavigation(currentPage: Pages.profile),
         body: Container(
           width: size.width,
@@ -167,16 +187,7 @@ class SettingsScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Профиль"),
-          backgroundColor: cMainBackgroundColor,
-          centerTitle: true,
-          elevation: 1,
-          titleTextStyle: const TextStyle(fontSize: 18),
-          shape: const Border(
-              bottom: BorderSide(
-                  color: Color.fromRGBO(255, 255, 255, 0.5), width: 1)),
-        ),
+        appBar: const NavTop(title: "Учетная запись"),
         body: Container(
           width: size.width,
           decoration: const BoxDecoration(
