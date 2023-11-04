@@ -8,22 +8,18 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        width: size.width,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.3, 0.5],
-            colors: [
-              cMainBackgroundColor,
-              cSecondaryBackgroundColor,
-            ],
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFF392359), Color(0xFF306773)],
         ),
-        child: DefaultTabController(
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: DefaultTabController(
           length: 2,
           child: Center(
             child: SingleChildScrollView(
@@ -133,7 +129,8 @@ class _LoginFormState extends State<LoginForm> {
             const SizedBox(height: 8),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 12)),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    backgroundColor: const Color.fromRGBO(102, 119, 217, 0.85)),
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -197,7 +194,8 @@ class _PhoneFormState extends State<PhoneForm> {
             const SizedBox(height: 8),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 12)),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    backgroundColor: const Color.fromRGBO(102, 119, 217, 0.85)),
                 onPressed: () {
                   Navigator.push(
                       context,
