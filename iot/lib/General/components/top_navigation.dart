@@ -25,7 +25,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.2,
-      decoration: const BoxDecoration(color: cMainBackgroundColor),
+      //decoration: const BoxDecoration(color: cMainBackgroundColor),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
         child: Row(

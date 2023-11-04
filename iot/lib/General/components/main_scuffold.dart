@@ -27,52 +27,46 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.white,
-        currentIndex: _currentIndex.round(),
-        backgroundColor: cMainBackgroundColor,
-        onTap: (tabIndex) {
-          _controller.jumpToPage(tabIndex);
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_customize_outlined),
-            label: 'Сценарии',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.touch_app),
-            label: 'Устройства',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
-            label: 'Профиль',
-          ),
-        ],
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFF392359), Color(0xFF306773)],
+        ),
       ),
-      body: Container(
-        width: size.width,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.3, 0.5],
-            colors: [
-              cMainBackgroundColor,
-              cSecondaryBackgroundColor,
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          bottomNavigationBar: BottomNavigationBar(
+            unselectedItemColor: Colors.white,
+            currentIndex: _currentIndex.round(),
+            backgroundColor: cMainBackgroundColor,
+            onTap: (tabIndex) {
+              _controller.jumpToPage(tabIndex);
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.dashboard_customize_outlined),
+                label: 'Сценарии',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.touch_app),
+                label: 'Устройства',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_outlined),
+                label: 'Профиль',
+              ),
             ],
           ),
-        ),
-        child: PageView(
-          controller: _controller,
-          children: const [
-            ListDevicesScreen(),
-            ListDevicesScreen(),
-            ProfileScreen()
-          ],
-        ),
-      ),
+          body: PageView(
+            controller: _controller,
+            children: const [
+              ListDevicesScreen(),
+              ListDevicesScreen(),
+              ProfileScreen()
+            ],
+          )),
     );
   }
 }

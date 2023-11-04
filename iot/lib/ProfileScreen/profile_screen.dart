@@ -139,25 +139,18 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return Scaffold(
-        appBar: const NavTop(title: "Учетная запись"),
-        body: Container(
-          width: size.width,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.3, 0.5],
-              colors: [
-                cMainBackgroundColor,
-                cSecondaryBackgroundColor,
-              ],
-            ),
+    return Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF392359), Color(0xFF306773)],
           ),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: const NavTop(title: "Учетная запись"),
+          body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Padding(
               padding:
                   EdgeInsets.only(left: 13, right: 13, bottom: 15, top: 30),
