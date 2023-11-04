@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iot/General/components/nav_top.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 import 'package:iot/ProfileScreen/profile_screen.dart';
 import 'package:iot/constants.dart';
@@ -75,18 +74,5 @@ class _MainScaffoldState extends State<MainScaffold> {
         ),
       ),
     );
-  }
-
-  String _getTitleOfPage(double page) {
-    switch (page) {
-      case 0:
-        return "Сценарии";
-      case 1:
-        return "Устройства";
-      case 2:
-        return "Профиль";
-      default:
-        return "ЧЕ";
-    }
   }
 }

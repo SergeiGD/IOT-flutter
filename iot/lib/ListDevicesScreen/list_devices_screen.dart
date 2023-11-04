@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/AddDevicesScreen/add_devices_screen.dart';
-import 'package:iot/General/components/nav_top.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/ListDevicesScreen/components/body.dart';
-import 'package:iot/General/components/bottom_navigation.dart';
 import 'package:iot/General/components/top_navigation.dart';
 import 'package:iot/General/components/redirect_button.dart';
 
