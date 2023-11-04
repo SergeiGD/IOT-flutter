@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iot/General/components/main_scuffold.dart';
 import 'package:iot/constants.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 
@@ -138,7 +139,7 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ListDevicesScreen()));
+                          builder: (context) => const MainScaffold()));
                 },
                 child: const Text(
                   "Далее",
@@ -202,7 +203,7 @@ class _PhoneFormState extends State<PhoneForm> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ListDevicesScreen()));
+                          builder: (context) => const MainScaffold()));
                 },
                 child: const Text(
                   "Далее",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/AddDevicesScreen/add_devices_screen.dart';
+import 'package:iot/General/components/nav_top.dart';
 import 'package:iot/constants.dart';
 import 'package:iot/ListDevicesScreen/components/body.dart';
 import 'package:iot/General/components/bottom_navigation.dart';
@@ -11,42 +12,26 @@ class ListDevicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        width: size.width,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.3, 0.5],
-            colors: [
-              cMainBackgroundColor,
-              cSecondaryBackgroundColor,
-            ],
+    return Column(
+      children: [
+        TopNavigation(
+          prevPageButton: false,
+          navItems: [
+            RedirectButton(
+              text: "Устройства",
+              event: () => (),
+            ),
+          ],
+          navIcon: NavIcon(
+            icon: const Icon(Icons.add),
+            event: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddDevicesScreen()),
+            ),
           ),
         ),
-        child: const ListDevicesScreenBody(),
-      ),
-      bottomNavigationBar: const BottomNavigation(
-        currentPage: Pages.devices,
-      ),
-      appBar: TopNavigation(
-        prevPageButton: false,
-        navItems: [
-          RedirectButton(
-            text: "Устройства",
-            event: () => (),
-          ),
-        ],
-        navIcon: NavIcon(
-          icon: const Icon(Icons.add),
-          event: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddDevicesScreen()),
-          ),
-        ),
-      ),
+        const ListDevicesScreenBody()
+      ],
     );
   }
 }

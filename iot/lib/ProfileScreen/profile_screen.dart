@@ -1,37 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iot/General/components/nav_top.dart';
 import 'package:iot/constants.dart';
 import 'package:iot/General/components/bottom_navigation.dart';
-
-class NavTop extends StatelessWidget implements PreferredSizeWidget {
-  const NavTop(
-      {super.key,
-      this.height = 46,
-      required this.title,
-      this.showLeading = true});
-
-  final double height;
-  final String title;
-  final bool showLeading;
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(title),
-      toolbarHeight: height,
-      backgroundColor: cMainBackgroundColor,
-      centerTitle: true,
-      elevation: 1,
-      automaticallyImplyLeading: showLeading,
-      titleTextStyle: const TextStyle(fontSize: 18),
-      shape: const Border(
-          bottom:
-              BorderSide(color: Color.fromRGBO(255, 255, 255, 0.5), width: 1)),
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(height);
-}
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -39,60 +9,47 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-        appBar: const NavTop(title: "Профиль", height: 63, showLeading: false),
-        bottomNavigationBar: const BottomNavigation(currentPage: Pages.profile),
-        body: Container(
-          width: size.width,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.3, 0.5],
-              colors: [
-                cMainBackgroundColor,
-                cSecondaryBackgroundColor,
-              ],
-            ),
+    return Column(
+      children: [
+        NavTop(title: "Профиль", height: 63, showLeading: false),
+        Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          const ItemProfile(),
+          const SizedBox(height: 10),
+          ButtonProfile(
+            icon: Icons.computer,
+            text: "Управление устройствами",
+            onTap: () {},
           ),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            const ItemProfile(),
-            const SizedBox(height: 10),
-            ButtonProfile(
-              icon: Icons.computer,
-              text: "Управление устройствами",
-              onTap: () {},
-            ),
-            const SizedBox(height: 31),
-            ButtonProfile(
-              icon: Icons.comment,
-              text: "FAQ и обратная связь",
-              onTap: () {},
-            ),
-            ButtonProfile(
-              icon: Icons.notifications,
-              text: "Уведомления",
-              onTap: () {},
-            ),
-            ButtonProfile(
-              icon: Icons.note,
-              text: "Пользовательское соглашение",
-              onTap: () {},
-            ),
-            const SizedBox(height: 31),
-            ButtonProfile(
-              icon: Icons.settings,
-              text: "Настройки",
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SettingsScreen()));
-              },
-            )
-          ]),
-        ));
+          const SizedBox(height: 31),
+          ButtonProfile(
+            icon: Icons.comment,
+            text: "FAQ и обратная связь",
+            onTap: () {},
+          ),
+          ButtonProfile(
+            icon: Icons.notifications,
+            text: "Уведомления",
+            onTap: () {},
+          ),
+          ButtonProfile(
+            icon: Icons.note,
+            text: "Пользовательское соглашение",
+            onTap: () {},
+          ),
+          const SizedBox(height: 31),
+          ButtonProfile(
+            icon: Icons.settings,
+            text: "Настройки",
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()));
+            },
+          )
+        ])
+      ],
+    );
   }
 }
 
