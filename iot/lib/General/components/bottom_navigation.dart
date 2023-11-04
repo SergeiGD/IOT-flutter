@@ -9,8 +9,8 @@ enum Pages {
   profile,
 }
 
-class BottonNavigation extends StatelessWidget {
-  const BottonNavigation({super.key, required this.currentPage});
+class BottomNavigation extends StatelessWidget {
+  const BottomNavigation({super.key, required this.currentPage});
   final Pages currentPage;
 
   int _getCurrentPage(Pages page) {
