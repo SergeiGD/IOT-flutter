@@ -41,7 +41,7 @@ class ProfileScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: const NavTop(title: "Профиль", height: 63, showLeading: false),
-        bottomNavigationBar: const BottonNavigation(currentPage: Pages.profile),
+        bottomNavigationBar: const BottomNavigation(currentPage: Pages.profile),
         body: Container(
           width: size.width,
           decoration: const BoxDecoration(
