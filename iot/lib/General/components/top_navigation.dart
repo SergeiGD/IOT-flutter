@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/General/components/redirect_button.dart';
 
 class NavIcon {

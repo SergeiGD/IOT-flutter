@@ -1,62 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/main_scuffold.dart';
-import 'package:iot/constants.dart';
+import 'package:iot/General/gradient_container.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFF392359), Color(0xFF306773)],
-        ),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: DefaultTabController(
-          length: 2,
-          child: Center(
-            child: SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height - 100),
-                child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(height: 70),
-                      Image(
-                          image: AssetImage('assets/images/logo.png'),
-                          width: 80,
-                          height: 80),
-                      Center(
-                        child: Text("Smart\nHome",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            )),
-                      ),
-                      SizedBox(height: 30),
-                      CountryPicker(),
-                      TabBar(indicatorColor: Colors.white70, tabs: [
-                        Tab(text: "По логину"),
-                        Tab(text: "По телефону")
+    return GradientContainer(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: DefaultTabController(
+            length: 2,
+            child: Center(
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxHeight: MediaQuery.of(context).size.height - 100),
+                  child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(height: 70),
+                        Image(
+                            image: AssetImage('assets/images/logo.png'),
+                            width: 80,
+                            height: 80),
+                        Center(
+                          child: Text("Smart\nHome",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              )),
+                        ),
+                        SizedBox(height: 30),
+                        CountryPicker(),
+                        TabBar(indicatorColor: Colors.white70, tabs: [
+                          Tab(text: "По логину"),
+                          Tab(text: "По телефону")
+                        ]),
+                        Expanded(
+                          child:
+                              TabBarView(children: [LoginForm(), PhoneForm()]),
+                        ),
+                        Text(
+                          'Нажимая “Далее”, Вы соглашаетесь с \nусловиями пользовательского соглашения',
+                          textAlign: TextAlign.center,
+                        )
                       ]),
-                      Expanded(
-                        child: TabBarView(children: [LoginForm(), PhoneForm()]),
-                      ),
-                      Text(
-                        'Нажимая “Далее”, Вы соглашаетесь с \nусловиями пользовательского соглашения',
-                        textAlign: TextAlign.center,
-                      )
-                    ]),
+                ),
               ),
             ),
           ),
@@ -130,7 +125,7 @@ class _LoginFormState extends State<LoginForm> {
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    backgroundColor: const Color.fromRGBO(102, 119, 217, 0.85)),
+                    backgroundColor: Theme.of(context).colorScheme.secondary),
                 onPressed: () {
                   Navigator.push(
                       context,
