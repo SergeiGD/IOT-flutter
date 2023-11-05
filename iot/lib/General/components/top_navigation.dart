@@ -20,6 +20,18 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
   final List<RedirectButton> navItems;
   final NavIcon? navIcon;
 
+  IconButton? _build_icon() {
+    if (navIcon != null) {
+      return IconButton(
+        icon: navIcon!.icon,
+        onPressed: navIcon!.event,
+        color: Colors.white,
+        iconSize: 30,
+      );
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -48,12 +60,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
             for (final button in navItems) button,
             SizedBox(
               width: 30,
-              child: IconButton(
-                icon: navIcon!.icon,
-                onPressed: navIcon!.event,
-                color: Colors.white,
-                iconSize: 30,
-              ),
+              child: _build_icon(),
             ),
           ],
         ),
