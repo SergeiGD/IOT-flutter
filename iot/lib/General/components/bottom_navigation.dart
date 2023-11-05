@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
+import 'package:iot/ListScenariosScreen/list_scenarios_screen.dart';
 import 'package:iot/LoginScreen/login_screen.dart';
 import 'package:iot/constants.dart';
 
@@ -31,7 +32,7 @@ class BottonNavigation extends StatelessWidget {
     // в будущем 0 и 2 заменяться на сценарии и профиль
     switch (page) {
       case 0:
-        return const ListDevicesScreen();
+        return const ListScenariosScreen();
       case 1:
         return const ListDevicesScreen();
       case 2:
