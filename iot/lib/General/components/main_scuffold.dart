@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iot/General/gradient_container.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 import 'package:iot/ProfileScreen/profile_screen.dart';
-import 'package:iot/constants.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});
@@ -27,20 +27,15 @@ class _MainScaffoldState extends State<MainScaffold> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFF392359), Color(0xFF306773)],
-        ),
-      ),
+    return GradientContainer(
       child: Scaffold(
           backgroundColor: Colors.transparent,
           bottomNavigationBar: BottomNavigationBar(
-            unselectedItemColor: Colors.white,
             currentIndex: _currentIndex.round(),
-            backgroundColor: cMainBackgroundColor,
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            unselectedItemColor:
+                Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
+            selectedItemColor: Theme.of(context).colorScheme.onPrimary,
             onTap: (tabIndex) {
               _controller.jumpToPage(tabIndex);
             },
