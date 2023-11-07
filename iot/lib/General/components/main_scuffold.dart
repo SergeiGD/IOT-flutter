@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iot/General/gradient_container.dart';
 import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 import 'package:iot/ProfileScreen/profile_screen.dart';
+import 'package:iot/ListScenariosScreen/list_scenarios_screen.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});
@@ -57,7 +58,7 @@ class _MainScaffoldState extends State<MainScaffold> {
           body: PageView(
             controller: _controller,
             children: const [
-              ListDevicesScreen(),
+              ListScenariosScreen(),
               ListDevicesScreen(),
               ProfileScreen()
             ],
