@@ -9,26 +9,27 @@ class AddDevicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const GradientContainer(
-        child: AddDevicesScreenBody(),
-      ),
-      appBar: TopNavigation(
-        prevPageButton: true,
-        navItems: [
-          RedirectButton(
-            text: "Добавить вручную",
+    return GradientContainer(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: const AddDevicesScreenBody(),
+        appBar: TopNavigation(
+          prevPageButton: true,
+          navItems: [
+            RedirectButton(
+              text: "Добавить вручную",
+              event: () => (),
+              active: true,
+            ),
+            RedirectButton(
+              text: "Сканирование",
+              event: () => (),
+            ),
+          ],
+          navIcon: NavIcon(
+            icon: const Icon(Icons.qr_code),
             event: () => (),
-            active: true,
           ),
-          RedirectButton(
-            text: "Сканирование",
-            event: () => (),
-          ),
-        ],
-        navIcon: NavIcon(
-          icon: const Icon(Icons.qr_code),
-          event: () => (),
         ),
       ),
     );
