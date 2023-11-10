@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iot/General/components/main_scuffold.dart';
+import 'package:iot/MainScreen/main_screen.dart';
 import 'package:iot/LoginScreen/components/countrypickerscreen.dart';
 import 'package:iot/main.dart';
 import 'package:provider/provider.dart';
@@ -146,7 +146,7 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainScaffold()));
+                          builder: (context) => const MainScreen()));
                 },
                 child: const Text(
                   "Далее",
@@ -216,7 +216,7 @@ class _PhoneFormState extends State<PhoneForm> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainScaffold()));
+                          builder: (context) => const MainScreen()));
                 },
                 child: const Text(
                   "Далее",

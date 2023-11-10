@@ -4,14 +4,14 @@ import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 import 'package:iot/ProfileScreen/profile_screen.dart';
 import 'package:iot/ListScenariosScreen/list_scenarios_screen.dart';
 
-class MainScaffold extends StatefulWidget {
-  const MainScaffold({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<MainScaffold> createState() => _MainScaffoldState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScaffoldState extends State<MainScaffold> {
+class _MainScreenState extends State<MainScreen> {
   double _currentIndex = 2;
   late PageController _controller;
 
