@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/main_scuffold.dart';
 import 'package:iot/LoginScreen/components/countrypickerscreen.dart';
+import 'package:iot/main.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});
@@ -68,21 +70,21 @@ class CountryPicker extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(_createRoute());
         },
-        child: const Row(
+        child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 26, child: Text("Страна")),
+              const SizedBox(height: 26, child: Text("Страна")),
               Row(
                 children: [
-                  SizedBox(
-                    height: 26,
-                    child: Text(
-                      "Россия",
-                    ),
-                  ),
-                  SizedBox(width: 4),
-                  Image(
+                  Consumer<SettingsModel>(builder: (context, settings, child) {
+                    return SizedBox(
+                      height: 26,
+                      child: Text(settings.country),
+                    );
+                  }),
+                  const SizedBox(width: 4),
+                  const Image(
                     image: AssetImage('assets/images/arrow_right.png'),
                     width: 14,
                     height: 14,
