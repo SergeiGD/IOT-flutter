@@ -18,7 +18,18 @@ class SettingsScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 13, right: 13, bottom: 15, top: 30),
           child: Text("Учетная запись"),
         ),
-        PrimaryButton(text: "Фото", onTap: () => {}),
+        PrimaryButton(
+            text: "Фото",
+            widget: Container(
+                width: 42,
+                height: 33,
+                padding: const EdgeInsets.only(right: 9.0),
+                child: const CircleAvatar(
+                  radius: 48,
+                  backgroundImage:
+                      AssetImage("assets/images/profile_picture.jpg"),
+                )),
+            onTap: () => {}),
         PrimaryButton(
             text: "Никнейм",
             widget: const Padding(
