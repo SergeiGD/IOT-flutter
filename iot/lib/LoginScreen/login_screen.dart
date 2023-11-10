@@ -7,12 +7,17 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GradientContainer(
-      child: Material(
-        color: Colors.transparent,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: LoginScreenBody(),
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: const GradientContainer(
+        child: Material(
+          color: Colors.transparent,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+            child: LoginScreenBody(),
+          ),
         ),
       ),
     );

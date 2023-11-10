@@ -28,41 +28,46 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return GradientContainer(
-      child: Scaffold(
-          backgroundColor: Colors.transparent,
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: _currentIndex.round(),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            unselectedItemColor:
-                Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
-            selectedItemColor: Theme.of(context).colorScheme.onPrimary,
-            onTap: (tabIndex) {
-              _controller.jumpToPage(tabIndex);
-            },
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.dashboard_customize_outlined),
-                label: 'Сценарии',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.touch_app),
-                label: 'Устройства',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                label: 'Профиль',
-              ),
-            ],
-          ),
-          body: PageView(
-            controller: _controller,
-            children: const [
-              ListScenariosScreen(),
-              ListDevicesScreen(),
-              ProfileScreen()
-            ],
-          )),
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: GradientContainer(
+        child: Scaffold(
+            backgroundColor: Colors.transparent,
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: _currentIndex.round(),
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              unselectedItemColor:
+                  Theme.of(context).colorScheme.onPrimary.withOpacity(0.75),
+              selectedItemColor: Theme.of(context).colorScheme.onPrimary,
+              onTap: (tabIndex) {
+                _controller.jumpToPage(tabIndex);
+              },
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.dashboard_customize_outlined),
+                  label: 'Сценарии',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.touch_app),
+                  label: 'Устройства',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle_outlined),
+                  label: 'Профиль',
+                ),
+              ],
+            ),
+            body: PageView(
+              controller: _controller,
+              children: const [
+                ListScenariosScreen(),
+                ListDevicesScreen(),
+                ProfileScreen()
+              ],
+            )),
+      ),
     );
   }
 }
