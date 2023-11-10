@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/gradient_container.dart';
-import 'package:iot/main.dart';
+import 'package:iot/providers.dart';
 import 'package:provider/provider.dart';
 
 class CountryPickerScreen extends StatelessWidget {

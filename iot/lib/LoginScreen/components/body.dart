@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iot/MainScreen/main_screen.dart';
 import 'package:iot/LoginScreen/components/countrypickerscreen.dart';
-import 'package:iot/main.dart';
+import 'package:iot/providers.dart';
 import 'package:provider/provider.dart';
 
 class LoginScreenBody extends StatelessWidget {

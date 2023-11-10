@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:iot/ListDevicesScreen/list_devices_screen.dart';
 import 'package:iot/LoginScreen/login_screen.dart';
 import 'package:iot/constants.dart';
+import 'package:iot/providers.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -49,8 +50,11 @@ class MyApp extends StatelessWidget {
         textSelectionTheme:
             const TextSelectionThemeData(cursorColor: Colors.white70));
 
-    return ChangeNotifierProvider(
-      create: (context) => SettingsModel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SettingsModel()),
+        ChangeNotifierProvider(create: (context) => ProfileModel())
+      ],
       child: MaterialApp(
         title: "Smart Home",
         theme: defaultTheme,
@@ -58,16 +62,5 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
       ),
     );
-  }
-}
-
-class SettingsModel extends ChangeNotifier {
-  String _country = "Россия";
-
-  String get country => _country;
-
-  void changeCountry(String newCountry) {
-    _country = newCountry;
-    notifyListeners();
   }
 }
