@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/main_scuffold.dart';
+import 'package:iot/LoginScreen/components/countrypickerscreen.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});
@@ -64,7 +65,9 @@ class CountryPicker extends StatelessWidget {
       child: TextButton(
         style: TextButton.styleFrom(
             foregroundColor: Theme.of(context).colorScheme.onPrimary),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(_createRoute());
+        },
         child: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,6 +92,25 @@ class CountryPicker extends StatelessWidget {
             ]),
       ),
     );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const CountryPickerScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          const begin = Offset(-1.0, 0.0);
+          const end = Offset.zero;
+          const curve = Curves.ease;
+          final tween =
+              Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          final offsetAnimation = animation.drive(tween);
+
+          return SlideTransition(
+            position: offsetAnimation,
+            child: child,
+          );
+        });
   }
 }
 
