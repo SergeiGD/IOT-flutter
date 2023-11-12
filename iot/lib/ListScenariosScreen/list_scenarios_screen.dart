@@ -11,42 +11,27 @@ class ListScenariosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        width: size.width,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.3, 0.5],
-            colors: [
-              cMainBackgroundColor,
-              cSecondaryBackgroundColor,
-            ],
+    return Column(
+      children: [
+        TopNavigation(
+          prevPageButton: false,
+          navItems: [
+            RedirectButton(
+              text: "Сценарии",
+              event: () => (),
+            ),
+          ],
+          navIcon: NavIcon(
+            icon: const Icon(Icons.add),
+            event: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AddScenariosScreen()),
+            ),
           ),
         ),
-        child: const ListScenariosScreenBody(),
-      ),
-      bottomNavigationBar: const BottonNavigation(
-        currentPage: Pages.scenarios,
-      ),
-      appBar: TopNavigation(
-        prevPageButton: false,
-        navItems: [
-          RedirectButton(
-            text: "Сценарии",
-            event: () => (),
-          ),
-        ],
-        navIcon: NavIcon(
-          icon: const Icon(Icons.add),
-          event: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddScenariosScreen()),
-          ),
-        ),
-      ),
+        const ListScenariosScreenBody()
+      ],
     );
   }
 }

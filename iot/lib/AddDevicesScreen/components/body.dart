@@ -24,7 +24,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",
@@ -32,7 +32,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",
@@ -40,7 +40,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",
@@ -54,7 +54,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",
@@ -62,7 +62,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",
@@ -70,7 +70,7 @@ class _AddDevicesScreenBodyState extends State<AddDevicesScreenBody> {
                 ItemButton(
                   size: size,
                   image: Image.asset(
-                    "images/fan.png",
+                    "assets/images/fan.png",
                     fit: BoxFit.cover,
                   ),
                   title: "Вентилятор",

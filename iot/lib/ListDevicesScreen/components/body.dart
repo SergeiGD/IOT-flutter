@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iot/constants.dart';
 
 class ListDevicesScreenBody extends StatefulWidget {
   const ListDevicesScreenBody({super.key});
@@ -21,13 +20,13 @@ class _ListDevicesScreenBodyState extends State<ListDevicesScreenBody> {
             SizedBox(
               height: size.height * 0.1,
             ),
-            const Center(
+            Center(
               child: Text(
-                "Отсутствуют\n подключенные\n устроства",
+                "Отсутствуют\n подключенные\n устройства",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: cSecondaryTextColor,
+                  color: Theme.of(context).colorScheme.onSecondary,
                   fontSize: 20,
                   letterSpacing: 2,
                   height: 1.5,

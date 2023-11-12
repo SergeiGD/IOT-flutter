@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/General/components/redirect_button.dart';
 
 class NavIcon {
@@ -35,34 +34,36 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 0.2,
-      decoration: const BoxDecoration(color: cMainBackgroundColor),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(
-              width: 30,
-              child: prevPageButton
-                  ? IconButton(
-                      icon: const Icon(Icons.arrow_back),
-                      iconSize: 30,
-                      color: Colors.white,
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                    )
-                  : null,
-            ),
-            for (final button in navItems) button,
-            SizedBox(
-              width: 30,
-              child: _build_icon(),
-            ),
-          ],
+    return SafeArea(
+      child: SizedBox(
+        height: size.height * 0.1,
+        //decoration: const BoxDecoration(color: cMainBackgroundColor),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: 30,
+                child: prevPageButton
+                    ? IconButton(
+                        icon: const Icon(Icons.arrow_back),
+                        iconSize: 30,
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      )
+                    : null,
+              ),
+              for (final button in navItems) button,
+              SizedBox(
+                width: 30,
+                child: _build_icon(),
+              ),
+            ],
+          ),
         ),
       ),
     );
