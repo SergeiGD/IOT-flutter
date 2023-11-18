@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/gradient_container.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/ScenarioNameScreen/components/body.dart';
 import 'package:iot/General/components/top_navigation.dart';
 import 'package:iot/General/components/redirect_button.dart';
@@ -10,7 +9,6 @@ class ScenarioNameScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return GradientContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,

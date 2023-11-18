@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/components/save_button.dart';
 import 'package:iot/ScenarioNameScreen/components/example_button.dart';
-import 'package:iot/constants.dart';
 
 class ScenarioNameScreenBody extends StatefulWidget {
   const ScenarioNameScreenBody({super.key});
@@ -51,7 +50,7 @@ class _ScenarioNameScreenBodyState extends State<ScenarioNameScreenBody> {
                       ),
                       hintText: 'Введите название',
                       hintStyle: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: Colors.white.withOpacity(0.25),
                       ),
                     ),
@@ -72,11 +71,11 @@ class _ScenarioNameScreenBodyState extends State<ScenarioNameScreenBody> {
               spacing: 10,
               runSpacing: 15,
               children: [
-                ExampleButton(text: "Пример 1"),
-                ExampleButton(text: "Пример 2"),
-                ExampleButton(text: "Пример 3"),
-                ExampleButton(text: "Пример 4"),
-                ExampleButton(text: "Пример 5"),
+                ExampleButton(text: "пример"),
+                ExampleButton(text: "пример"),
+                ExampleButton(text: "пример"),
+                ExampleButton(text: "пример"),
+                ExampleButton(text: "пример"),
               ],
             ),
             SaveButton(event: () => (), size: size)

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iot/General/gradient_container.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/AddScenariosScreen/components/body.dart';
 import 'package:iot/General/components/top_navigation.dart';
 import 'package:iot/General/components/redirect_button.dart';

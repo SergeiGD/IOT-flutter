@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot/AddScenariosScreen/add_Scenarios_screen.dart';
-import 'package:iot/constants.dart';
 import 'package:iot/ListScenariosScreen/components/body.dart';
-import 'package:iot/General/components/bottom_navigation.dart';
 import 'package:iot/General/components/top_navigation.dart';
 import 'package:iot/General/components/redirect_button.dart';
 
