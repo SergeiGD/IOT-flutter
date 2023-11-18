@@ -15,12 +15,12 @@ class _AddScenariosScreenBodyState extends State<AddScenariosScreenBody> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+            child: const Text(
               "Заполните сценарии",
               textAlign: TextAlign.start,
               style: TextStyle(
@@ -28,31 +28,34 @@ class _AddScenariosScreenBodyState extends State<AddScenariosScreenBody> {
                 fontSize: 16,
               ),
             ),
-            const SizedBox(height: 10),
-            ButtonScenario(
-              event: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const ScenarioNameScreen()),
-              ),
-              icon: Icons.comment,
-              text: "Укажите имя сценария",
+          ),
+          const SizedBox(height: 10),
+          ButtonScenario(
+            size: size,
+            event: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ScenarioNameScreen()),
             ),
-            const SizedBox(height: 10),
-            ButtonScenario(
-              event: () => (),
-              icon: Icons.play_circle_outline,
-              text: "Добавить условие",
-            ),
-            const SizedBox(height: 10),
-            ButtonScenario(
-              event: () => (),
-              icon: Icons.playlist_add_sharp,
-              text: "Добавить действие",
-            ),
-            SaveButton(event: () => (), size: size)
-          ],
-        ),
+            icon: Icons.comment,
+            text: "Укажите имя сценария",
+          ),
+          const SizedBox(height: 10),
+          ButtonScenario(
+            size: size,
+            event: () => (),
+            icon: Icons.play_circle_outline,
+            text: "Добавить условие",
+          ),
+          const SizedBox(height: 10),
+          ButtonScenario(
+            size: size,
+            event: () => (),
+            icon: Icons.playlist_add_sharp,
+            text: "Добавить действие",
+          ),
+          SaveButton(event: () => (), size: size)
+        ],
       ),
     );
   }

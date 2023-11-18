@@ -19,7 +19,6 @@ class AddDevicesScreen extends StatelessWidget {
             RedirectButton(
               text: "Добавить вручную",
               event: () => (),
-              active: true,
             ),
             RedirectButton(
               text: "Сканирование",

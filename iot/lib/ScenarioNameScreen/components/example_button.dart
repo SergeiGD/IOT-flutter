@@ -16,13 +16,13 @@ class ExampleButton extends StatelessWidget {
         onPressed: () => (),
         style: TextButton.styleFrom(
           padding: const EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 20,
+            horizontal: 15,
+            vertical: 10,
           ),
         ),
         child: Text(
           text,
-          style: TextStyle(fontSize: 16, color: Colors.white),
+          style: const TextStyle(fontSize: 12, color: Colors.white),
         ),
       ),
     );

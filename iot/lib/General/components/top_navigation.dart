@@ -25,7 +25,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
         icon: navIcon!.icon,
         onPressed: navIcon!.event,
         color: Colors.white,
-        iconSize: 30,
+        iconSize: 20,
       );
     }
     return null;
@@ -37,9 +37,8 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
     return SafeArea(
       child: SizedBox(
         height: size.height * 0.1,
-        //decoration: const BoxDecoration(color: cMainBackgroundColor),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+          padding: EdgeInsets.symmetric(horizontal: size.width * 0.02),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,7 +48,7 @@ class TopNavigation extends StatelessWidget implements PreferredSizeWidget {
                 child: prevPageButton
                     ? IconButton(
                         icon: const Icon(Icons.arrow_back),
-                        iconSize: 30,
+                        iconSize: 20,
                         color: Colors.white,
                         onPressed: () {
                           Navigator.of(context).pop();
