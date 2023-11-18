@@ -36,6 +36,7 @@ class _ScenarioNameScreenBodyState extends State<ScenarioNameScreenBody> {
                     maxLines: 1,
                     minLines: 1,
                     decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(10.0),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.white.withOpacity(0.25),
@@ -63,7 +64,7 @@ class _ScenarioNameScreenBodyState extends State<ScenarioNameScreenBody> {
                   onPressed: () => (),
                   icon: const Icon(Icons.image),
                   color: Colors.white,
-                  iconSize: 75,
+                  iconSize: 55,
                 )
               ],
             ),
